@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Heart, GraduationCap, Globe } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const blocks = [
     {
@@ -67,7 +68,5 @@ const WhatWeDo = () => {
     );
 };
 
-// Helper inside for simplicity if cn isn't imported correctly in this snippet
-function cn(...inputs: any[]) { return inputs.filter(Boolean).join(' '); }
 
 export default WhatWeDo;

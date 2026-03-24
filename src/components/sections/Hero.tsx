@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/uikit/Button';
-import { ArrowRight, ShieldCheck, Award, Users } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Award, Users, Landmark } from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -40,7 +40,7 @@ const Hero = () => {
                     <div className="mt-12 pt-12 border-t border-slate-200 flex flex-wrap gap-8">
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                                < لینڈమార్క్ size={20} />
+                                <Landmark size={20} />
                             </div>
                             <div className="text-sm font-bold text-primary">NEP 2020<br /><span className="text-slate-500 font-medium">Credits Aligned</span></div>
                         </div>

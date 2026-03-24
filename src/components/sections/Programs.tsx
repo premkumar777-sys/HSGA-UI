@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/uikit/Button';
+import Link from 'next/link';
 
 const programs = [
     { name: 'Cubs & Bulbuls', age: '6–10 Yrs', desc: 'Focus on play-based learning and civic values.', emoji: '🐯' },
@@ -55,5 +56,5 @@ const Programs = () => {
     );
 };
 
-import Link from 'next/link';
+
 export default Programs;
