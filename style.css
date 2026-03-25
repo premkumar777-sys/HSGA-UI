@@ -157,7 +157,7 @@ header {
 }
 
 .header-inner {
-   padding: 16px 15px;
+   padding: 10px 15px;
    display: flex;
    align-items: center;
    gap: 20px;
@@ -165,8 +165,8 @@ header {
 
 
 .logo-frame {
-   width: 82px;
-   height: 82px;
+   width: 70px;
+   height: 70px;
    border-radius: 8px;
    /* Formal rounded square */
    background: #fff;
@@ -188,14 +188,14 @@ header {
 
 .header-text h1 {
    font-family: 'EB Garamond', serif;
-   font-size: 22px;
+   font-size: 20px;
    font-weight: 700;
    line-height: 1.2;
 }
 
 .header-text .tel {
    font-family: 'Noto Sans Telugu', sans-serif;
-   font-size: 18px;
+   font-size: 16px;
    color: var(--gold2);
    margin-bottom: 2px;
 }
@@ -241,7 +241,7 @@ header {
    background: #fffdf5;
    border-bottom: 1.5px solid var(--saffron);
    /* Institutional gold line */
-   height: 32px;
+   height: 28px;
    display: flex;
    align-items: center;
    overflow: hidden;
@@ -283,7 +283,7 @@ header {
    text-decoration: none;
    font-size: 14px;
    font-weight: 600;
-   padding: 14px 16px;
+   padding: 10px 16px;
    white-space: nowrap;
    position: relative;
    transition: color 0.2s;
