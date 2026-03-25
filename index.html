@@ -13,58 +13,6 @@
 
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div style="display:flex;gap:14px;">
-        <a href="#">Home</a><a href="#">Sitemap</a><a href="#">Accessibility</a><a href="#">Screen Reader</a>
-      </div>
-      <div class="topbar-right">
-        <span>Government of Telangana</span>
-        <span id="live-date"></span>
-        <span>A&nbsp;&nbsp;A+&nbsp;&nbsp;A-</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="header-inner">
-      <div class="logo-circle">⚜</div>
-      <div class="header-text">
-        <div class="tel">హిందుస్తాన్ స్కౌట్స్ &amp; గైడ్స్ అసోసియేషన్ — తెలంగాణ రాష్ట్రం</div>
-        <h1>Hindustan Scouts &amp; Guides Association — Telangana State</h1>
-        <div class="sub">State Office: Hyderabad | Affiliated: BSG (National) · WOSM · WAGGS | Recognised: Govt. of
-          Telangana · Ministry of Education, India</div>
-      </div>
-      <div class="header-right">
-        <div class="motto">"Be Prepared — సిద్ధంగా ఉండు"</div>
-        <div class="affiliations">🏛 Govt. of Telangana &nbsp;·&nbsp; 🇮🇳 BSG &nbsp;·&nbsp; 🌐 WOSM</div>
-      </div>
-    </div>
-  </header>
-
-  <!-- MAIN NAV -->
-  <nav class="main-nav">
-    <div class="nav-wrap">
-      <a href="#" onclick="showPage('home',this)" class="active">Home</a>
-      <a href="#" onclick="showPage('about',this)">About Us</a>
-      <a href="#" onclick="showPage('leadership',this)">Leadership</a>
-      <a href="#" onclick="showPage('programs',this)">Programs</a>
-      <a href="#" onclick="showPage('training',this)">Training</a>
-      <a href="#" onclick="showPage('certification',this)">Certification</a>
-      <a href="#" onclick="showPage('onboarding',this)">School Onboarding</a>
-      <a href="#" onclick="showPage('government',this)">Govt. Alignment</a>
-      <a href="#" onclick="showPage('sdg',this)">SDG Impact</a>
-      <a href="#" onclick="showPage('media',this)">Media</a>
-      <a href="#" onclick="showPage('notifications',this)">Notifications</a>
-      <a href="#" onclick="showPage('resources',this)">Resources</a>
-      <a href="#" onclick="showPage('testimonials',this)">Success Stories</a>
-      <a href="#" onclick="showPage('contact',this)">Contact</a>
-      <a href="#" onclick="showPage('join',this)" class="nav-join">Join HSGA ▶</a>
-    </div>
-  </nav>
-
   <!-- NEWS TICKER -->
   <div class="ticker">
     <div class="tick-label">📢 LATEST</div>
@@ -81,6 +29,77 @@
     </div>
   </div>
 
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-frame">
+        <img src="hsga-logo.jpg" alt="HSGA Logo">
+      </div>
+      <div class="header-text">
+        <div class="tel">హిందుస్తాన్ స్కౌట్స్ &amp; గైడ్స్ అసోసియేషన్ — తెలంగాణ రాష్ట్రం</div>
+        <h1>Hindustan Scouts &amp; Guides Association — Telangana State</h1>
+        <div class="sub">State Office: Hyderabad | Affiliated: BSG (National) · WOSM · WAGGS | Recognised: Govt. of
+          Telangana · Ministry of Education, India</div>
+      </div>
+      <div class="header-right">
+        <div class="motto">"Be Prepared — సిద్ధంగా ఉండు"</div>
+        <div class="affiliations">🏛 Govt. of Telangana &nbsp;·&nbsp; 🇮🇳 BSG &nbsp;·&nbsp; 🌐 WOSM</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN NAV -->
+  <nav class="main-nav">
+    <div class="nav-wrap">
+      <div class="nav-indicator"></div>
+      <a href="#" onclick="showPage('home',this)" class="active">Home</a>
+
+      <!-- ABOUT US DROPDOWN -->
+      <div class="dropdown">
+        <a href="#" class="drop-trigger">About Us <span class="arr">▾</span></a>
+        <div class="dropdown-content">
+          <a href="#" onclick="showPage('about')">Our Story</a>
+          <a href="#" onclick="showPage('leadership')">Leadership</a>
+          <a href="#" onclick="showPage('testimonials')">Success Stories</a>
+          <a href="#" onclick="showPage('media')">Media</a>
+          <a href="#" onclick="showPage('contact')">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- PROGRAMS DROPDOWN -->
+      <div class="dropdown">
+        <a href="#" class="drop-trigger">Programs <span class="arr">▾</span></a>
+        <div class="dropdown-content">
+          <a href="#" onclick="showPage('programs')">Youth Sections</a>
+          <a href="#" onclick="showPage('government')">Govt. Alignment</a>
+          <a href="#" onclick="showPage('sdg')">SDG Impact</a>
+        </div>
+      </div>
+
+      <!-- SCHOOLS DROPDOWN -->
+      <div class="dropdown">
+        <a href="#" class="drop-trigger">Schools <span class="arr">▾</span></a>
+        <div class="dropdown-content">
+          <a href="#" onclick="showPage('onboarding')">School Onboarding</a>
+          <a href="#" onclick="showPage('training')">Training</a>
+          <a href="#" onclick="showPage('certification')">Certification</a>
+        </div>
+      </div>
+
+      <!-- RESOURCES DROPDOWN -->
+      <div class="dropdown">
+        <a href="#" class="drop-trigger">Updates <span class="arr">▾</span></a>
+        <div class="dropdown-content">
+          <a href="#" onclick="showPage('notifications')">Notifications</a>
+          <a href="#" onclick="showPage('resources')">Official Resources</a>
+        </div>
+      </div>
+
+      <a href="#" onclick="showPage('join',this)" class="nav-join">Join HSGA ▶</a>
+    </div>
+  </nav>
+
   <!-- ==============================
      PAGE: HOME
      ============================== -->
@@ -88,26 +107,40 @@
 
     <!-- HERO -->
     <div class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-badge">🏅 Established 1949 · Telangana State · Serving 75+ Years</div>
-          <h2>We Don't Just Train Students.<br>We Build <em>Citizens of Tomorrow.</em></h2>
-          <p>Hindustan Scouts &amp; Guides Association, Telangana State — India's oldest and most trusted youth
-            movement. Shaping character, courage, and commitment in 1,200+ schools across all 33 districts.</p>
-          <div class="hero-btns">
-            <a href="#" onclick="showPage('onboarding')" class="btn btn-orange">Register Your School</a>
-            <a href="#" onclick="showPage('about')" class="btn btn-outline">Discover Our Story</a>
+      <div class="hero-carousel">
+        <div class="hero-slide active" style="background-image: url('assets/hero-1.png')"></div>
+        <div class="hero-slide" style="background-image: url('assets/hero-2.png')"></div>
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <div class="hero-badge">🏅 Established 1949 · Telangana State · Serving 75+ Years</div>
+            <h2>We Don't Just Train Students.<br>We Build <em>Citizens of Tomorrow.</em></h2>
+            <p>Hindustan Scouts &amp; Guides Association, Telangana State — India's oldest and most trusted youth
+              movement. Shaping character, courage, and commitment in 1,200+ schools across all 33 districts.</p>
+            <div class="hero-btns">
+              <a href="#" onclick="showPage('onboarding')" class="btn btn-orange">Register Your School</a>
+              <a href="#" onclick="showPage('about')" class="btn btn-outline">Discover Our Story</a>
+            </div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-box"><span class="n" data-target="33">0</span><span class="l">Districts Covered</span>
+            </div>
+            <div class="stat-box"><span class="n" data-target="1200" data-suffix="+">0</span><span class="l">Affiliated
+                Schools</span></div>
+            <div class="stat-box"><span class="n" data-target="85" data-suffix="K+">0</span><span class="l">Active
+                Members</span></div>
+            <div class="stat-box"><span class="n" data-target="75" data-suffix="+ Yrs">0</span><span class="l">Years of
+                Service</span></div>
           </div>
         </div>
-        <div class="stat-grid">
-          <div class="stat-box"><span class="n" data-target="33">0</span><span class="l">Districts Covered</span></div>
-          <div class="stat-box"><span class="n" data-target="1200" data-suffix="+">0</span><span class="l">Affiliated
-              Schools</span></div>
-          <div class="stat-box"><span class="n" data-target="85" data-suffix="K+">0</span><span class="l">Active
-              Members</span></div>
-          <div class="stat-box"><span class="n" data-target="75" data-suffix="+ Yrs">0</span><span class="l">Years of
-              Service</span></div>
-        </div>
+      </div>
+
+      <div class="hero-nav">
+        <span class="hero-dot active" onclick="setHeroSlide(0)"></span>
+        <span class="hero-dot" onclick="setHeroSlide(1)"></span>
       </div>
     </div>
 
@@ -2185,7 +2218,8 @@
                 largest Haritha Haram drive, and had two students earn Rajya Puraskar.</p>
               <p style="margin-top:8px;font-style:italic;color:#555;">"Parents came to us asking why their child's
                 confidence, public speaking, and social sense improved so dramatically. The answer was always HSGA." —
-                <strong>Mrs. Padma Reddy, Principal</strong></p>
+                <strong>Mrs. Padma Reddy, Principal</strong>
+              </p>
               <div class="case-metric">
                 <div class="cm-box">
                   <div class="cv">2</div>

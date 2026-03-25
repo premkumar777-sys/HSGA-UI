@@ -1,48 +1,33 @@
-// ===== ACCESSIBILITY: FONT SIZE TOGGLE =====
-let currentFontSize = 15;
-function changeFontSize(action) {
-    if (action === 'plain') currentFontSize = 15;
-    else if (action === 'plus') currentFontSize += 1;
-    else if (action === 'minus') currentFontSize -= 1;
 
-    // Constrain
-    if (currentFontSize > 22) currentFontSize = 22;
-    if (currentFontSize < 12) currentFontSize = 12;
+// ===== HERO CAROUSEL =====
+let currentHeroSlide = 0;
+function setHeroSlide(idx) {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    if (!slides.length) return;
 
-    document.documentElement.style.fontSize = currentFontSize + 'px';
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+    currentHeroSlide = idx;
 }
 
-// Hook up accessibility buttons
-document.querySelectorAll('.topbar-right span').forEach(span => {
-    if (span.textContent.includes('A')) {
-        const parts = span.textContent.trim().split(/\s+/);
-        span.innerHTML = '';
-        parts.forEach(p => {
-            const a = document.createElement('a');
-            a.href = '#';
-            a.style.color = 'inherit';
-            a.style.textDecoration = 'none';
-            a.style.margin = '0 5px';
-            a.textContent = p;
-            if (p === 'A+') a.onclick = (e) => { e.preventDefault(); changeFontSize('plus'); };
-            else if (p === 'A-') a.onclick = (e) => { e.preventDefault(); changeFontSize('minus'); };
-            else if (p === 'A') a.onclick = (e) => { e.preventDefault(); changeFontSize('plain'); };
-            span.appendChild(a);
-        });
-    }
-});
-
-// ===== DATE =====
-const d = new Date();
-const liveDateEl = document.getElementById('live-date');
-if (liveDateEl) {
-    liveDateEl.textContent = d.toLocaleDateString('en-IN', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+function nextHeroSlide() {
+    const slides = document.querySelectorAll('.hero-slide');
+    if (!slides.length) return;
+    let next = (currentHeroSlide + 1) % slides.length;
+    setHeroSlide(next);
 }
+
+// Initial cycle
+setInterval(nextHeroSlide, 5000);
 
 // ===== PAGE ROUTING =====
 function showPage(id, navEl) {
     document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.nav-wrap a').forEach(a => a.classList.remove('active'));
+    document.querySelectorAll('.nav-wrap a, .drop-trigger').forEach(a => a.classList.remove('active'));
 
     const target = document.getElementById('page-' + id);
     if (target) {
@@ -53,19 +38,39 @@ function showPage(id, navEl) {
     if (navEl) {
         navEl.classList.add('active');
     } else {
+        // Find links that call this page ID and mark them/parents as active
         document.querySelectorAll('.nav-wrap a').forEach(a => {
             if (a.getAttribute('onclick') && a.getAttribute('onclick').includes("'" + id + "'")) {
                 a.classList.add('active');
+                // If it's inside a dropdown, mark the trigger as active too
+                const parentDropdown = a.closest('.dropdown');
+                if (parentDropdown) {
+                    parentDropdown.querySelector('.drop-trigger').classList.add('active');
+                }
             }
         });
     }
     return false;
 }
 
-// ===== NAV INTERCEPT =====
-document.querySelectorAll('.nav-wrap a').forEach(a => {
-    a.addEventListener('click', function (e) {
-        // e.preventDefault(); // Handled by inline onclick usually, but safe to have
+// ===== NAV INTERCEPT & INDICATOR =====
+document.addEventListener('DOMContentLoaded', () => {
+    const indicator = document.querySelector('.nav-indicator');
+    const navWrap = document.querySelector('.nav-wrap');
+    const items = document.querySelectorAll('.nav-wrap > a, .nav-wrap > .dropdown');
+
+    if (!indicator || !navWrap) return;
+
+    items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            indicator.style.width = item.offsetWidth + 'px';
+            indicator.style.left = item.offsetLeft + 'px';
+            indicator.style.opacity = '1';
+        });
+    });
+
+    navWrap.addEventListener('mouseleave', () => {
+        indicator.style.opacity = '0';
     });
 });
 
