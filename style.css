@@ -656,21 +656,84 @@ header {
 
 .stat-box {
    background: rgba(255, 255, 255, 0.08);
+   /* Slightly softer for overlay */
    border: 1px solid rgba(255, 255, 255, 0.15);
    border-radius: 2px;
    padding: 24px 14px;
    text-align: center;
    backdrop-filter: blur(4px);
+   /* Premium touch on stats */
 }
 
-.hero-nav {
-   position: absolute;
-   bottom: 40px;
-   left: 50%;
-   transform: translateX(-50%);
-   z-index: 10;
+.stat-box .n {
+   font-family: 'EB Garamond', serif;
+   font-size: 38px;
+   font-weight: 700;
+   color: var(--gold2);
+   display: block;
+   line-height: 1;
+}
+
+.stat-box .l {
+   font-size: 12px;
+   font-weight: 600;
+   color: #b0cce4;
+   margin-top: 6px;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+}
+
+.hero-trust-bar {
+   margin-top: 50px;
+   padding-top: 30px;
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
    display: flex;
-   gap: 12px;
+   align-items: center;
+   gap: 60px;
+   justify-content: center;
+   width: 100%;
+}
+
+.trust-item {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+
+.trust-item span {
+   font-size: 11px;
+   font-weight: 700;
+   color: #90b4d4;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+}
+
+.t-logo {
+   height: 48px;
+   border-radius: 4px;
+   overflow: hidden;
+   background: rgba(255, 255, 255, 0.9);
+   padding: 5px 12px;
+   display: flex;
+   align-items: center;
+   transition: transform 0.3s;
+}
+
+.t-logo:hover {
+   transform: translateY(-3px);
+   background: #fff;
+}
+
+.t-logo img {
+   height: 100%;
+   width: auto;
+   object-fit: contain;
+}
+
+.trust-sep {
+   width: 1px;
+   height: 30px;
+   background: rgba(255, 255, 255, 0.15);
 }
 
 .hero-dot {
