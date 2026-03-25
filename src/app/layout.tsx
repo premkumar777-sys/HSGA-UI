@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import NewsTicker from "@/components/layout/NewsTicker";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${inter.variable} ${poppins.variable} scroll-smooth`}>
             <body className="font-body antialiased">
+                <NewsTicker />
                 <Navbar />
                 {children}
                 <Footer />

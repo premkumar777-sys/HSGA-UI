@@ -42,6 +42,10 @@ const Navbar = () => {
                             <span className="font-heading font-bold text-primary tracking-tight text-lg leading-tight uppercase">HSGA Telangana</span>
                             <span className="text-[10px] text-slate-500 font-bold tracking-widest uppercase">Hindustan Scouts & Guides</span>
                         </div>
+                        <div className="hidden sm:flex items-center gap-4 ml-6 pl-6 border-l border-slate-200 opacity-60">
+                            <img src="/assets/recognition.png" alt="Govt. Recognition" className="h-6 w-auto" />
+                            <img src="/assets/wfis.png" alt="WFIS Affiliation" className="h-6 w-auto" />
+                        </div>
                     </Link>
 
                     {/* Desktop Nav */}
