@@ -206,41 +206,22 @@ header {
    margin-top: 3px;
 }
 
-.header-logos {
+.header-right {
    margin-left: auto;
-   display: flex;
-   gap: 25px;
-   align-items: center;
+   text-align: right;
 }
 
-.h-trust {
-   display: flex;
-   align-items: center;
-   gap: 10px;
-   padding: 4px 12px;
-   background: rgba(255, 255, 255, 0.05);
-   border: 1px solid rgba(255, 255, 255, 0.1);
-   border-radius: 4px;
-}
-
-.h-trust img {
-   height: 32px;
-   width: auto;
-   object-fit: contain;
-}
-
-.h-label {
-   font-size: 10px;
-   line-height: 1.2;
-   color: #8ab0d0;
-   text-transform: uppercase;
-   letter-spacing: 0.5px;
-}
-
-.h-label strong {
-   display: block;
+.header-right .motto {
+   font-family: 'EB Garamond', serif;
+   font-style: italic;
+   font-size: 15px;
    color: var(--gold2);
+}
+
+.header-right .affiliations {
    font-size: 11px;
+   color: #7a9ab5;
+   margin-top: 4px;
 }
 
 /* ===== MAIN NAV ===== */
