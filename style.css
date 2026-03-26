@@ -565,13 +565,12 @@ header {
 /* Hero Carousel Architecture */
 .hero {
    position: relative;
-   min-height: 600px;
+   min-height: 420px;
    display: flex;
    align-items: center;
    overflow: hidden;
-   border-bottom: 5px solid var(--saffron);
+   border-bottom: 4px solid var(--saffron);
    background: var(--navy);
-   /* Fallback */
 }
 
 /* Modern Patriotic Mesh Gradient */
@@ -659,12 +658,12 @@ header {
    flex-direction: column;
    align-items: center;
    text-align: center;
-   padding: 30px 24px 100px;
+   padding: 20px 24px 30px;
 }
 
 .hero-text {
    max-width: 820px;
-   margin-bottom: 50px;
+   margin-bottom: 24px;
 }
 
 .hero-badge {
@@ -685,12 +684,12 @@ header {
 
 .hero h2 {
    font-family: 'EB Garamond', serif;
-   font-size: 52px;
+   font-size: 38px;
    font-weight: 700;
-   line-height: 1.1;
+   line-height: 1.15;
    color: #fff;
-   margin-bottom: 20px;
-   text-shadow: 0 4px 15px rgba(0, 20, 40, 0.6);
+   margin-bottom: 14px;
+   text-shadow: 0 3px 10px rgba(0, 20, 40, 0.5);
 }
 
 .hero h2 em {
@@ -700,11 +699,10 @@ header {
 
 .hero p {
    color: #ffffff;
-   /* Brighter for contrast */
-   font-size: 16px;
-   margin: 0 auto 32px;
-   max-width: 680px;
-   text-shadow: 0 2px 10px rgba(0, 20, 40, 0.8);
+   font-size: 14px;
+   margin: 0 auto 20px;
+   max-width: 620px;
+   text-shadow: 0 2px 8px rgba(0, 20, 40, 0.7);
    opacity: 0.95;
 }
 
@@ -718,37 +716,36 @@ header {
 .stat-grid {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
-   gap: 20px;
+   gap: 12px;
    width: 100%;
+   max-width: 700px;
+   margin: 0 auto;
 }
 
 .stat-box {
-   background: rgba(255, 255, 255, 0.08);
-   /* Slightly softer for overlay */
-   border: 1px solid rgba(255, 255, 255, 0.15);
-   border-radius: 2px;
-   padding: 24px 14px;
+   background: rgba(255, 255, 255, 0.1);
+   border-top: 3px solid var(--saffron);
+   border-radius: 0;
+   padding: 14px 10px 12px;
    text-align: center;
-   backdrop-filter: blur(4px);
-   /* Premium touch on stats */
 }
 
 .stat-box .n {
    font-family: 'EB Garamond', serif;
-   font-size: 38px;
+   font-size: 28px;
    font-weight: 700;
-   color: var(--gold2);
+   color: #fff;
    display: block;
    line-height: 1;
 }
 
 .stat-box .l {
-   font-size: 12px;
+   font-size: 10px;
    font-weight: 600;
-   color: #b0cce4;
-   margin-top: 6px;
+   color: #a0bdd5;
+   margin-top: 4px;
    text-transform: uppercase;
-   letter-spacing: 0.5px;
+   letter-spacing: 0.8px;
 }
 
 .hero-trust-bar {
