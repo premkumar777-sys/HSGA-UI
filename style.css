@@ -25,6 +25,7 @@
 
 html {
    scroll-behavior: smooth;
+   overflow-x: hidden;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
    background: #fff;
    font-size: 15px;
    line-height: 1.7;
+   overflow-x: hidden;
 }
 
 /* ===== UTILITY ===== */
@@ -569,7 +571,7 @@ header {
    display: flex;
    align-items: center;
    overflow: hidden;
-   border-bottom: 4px solid var(--saffron);
+   border-bottom: none;
    background: var(--navy);
 }
 
