@@ -192,11 +192,15 @@ document.addEventListener('click', (e) => {
     const btn = e.target.closest('.btn');
     if (!btn) return;
 
+    // Remove existing ripples to avoid stacking on multiple clicks
+    const existingRipples = btn.querySelectorAll('.ripple');
+    existingRipples.forEach(r => r.remove());
+
     const ripple = document.createElement('span');
     ripple.classList.add('ripple');
 
     const rect = btn.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
+    const size = Math.max(btn.offsetWidth, btn.offsetHeight);
     const x = e.clientX - rect.left - size / 2;
     const y = e.clientY - rect.top - size / 2;
 
@@ -205,6 +209,7 @@ document.addEventListener('click', (e) => {
     ripple.style.top = y + 'px';
 
     btn.appendChild(ripple);
+    console.log('Ripple attached to:', btn.textContent.trim());
 
     ripple.addEventListener('animationend', () => {
         ripple.remove();
