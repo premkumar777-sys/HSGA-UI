@@ -22,8 +22,8 @@ function nextHeroSlide() {
     setHeroSlide(next);
 }
 
-// Initial cycle
-setInterval(nextHeroSlide, 5000);
+// carousel cycle disabled for patriotic animation
+// setInterval(nextHeroSlide, 5000);
 
 // ===== PAGE ROUTING =====
 function showPage(id, navEl) {
