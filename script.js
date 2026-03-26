@@ -1,3 +1,4 @@
+console.log('HSGA Script Loaded v1.1');
 
 // ===== HERO CAROUSEL =====
 let currentHeroSlide = 0;
