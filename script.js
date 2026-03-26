@@ -77,30 +77,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== CRICKET-STYLE DECELERATION COUNTER =====
 function animCount(el, target, suffix) {
-    const totalDuration = 2000; // total animation time in ms
+    const slowCount = 5; // last 5 numbers go slow
+    const fastTarget = Math.max(target - slowCount, 0);
+    const fastDuration = 800; // ms for the fast phase
+    const slowInterval = 250; // ms per tick in slow phase
     const startTime = performance.now();
 
-    function easeOutQuart(t) {
-        // Fast at start, dramatically slow at end
-        return 1 - Math.pow(1 - t, 4);
-    }
-
-    function tick(now) {
+    // Phase 1: race fast from 0 to (target - 5)
+    function fastTick(now) {
         const elapsed = now - startTime;
-        const progress = Math.min(elapsed / totalDuration, 1);
-        const easedProgress = easeOutQuart(progress);
-        const currentValue = Math.round(easedProgress * target);
+        const progress = Math.min(elapsed / fastDuration, 1);
+        // ease-out for smooth fast phase
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.round(eased * fastTarget);
 
         el.textContent = currentValue + (suffix || '');
 
         if (progress < 1) {
-            requestAnimationFrame(tick);
+            requestAnimationFrame(fastTick);
         } else {
-            el.textContent = target + (suffix || '');
+            el.textContent = fastTarget + (suffix || '');
+            // Phase 2: tick last 5 slowly
+            let i = 1;
+            const slowTick = setInterval(() => {
+                el.textContent = (fastTarget + i) + (suffix || '');
+                if (fastTarget + i >= target) clearInterval(slowTick);
+                i++;
+            }, slowInterval);
         }
     }
 
-    requestAnimationFrame(tick);
+    requestAnimationFrame(fastTick);
 }
 
 const obs = new IntersectionObserver(entries => {
