@@ -75,18 +75,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ===== COUNTER ANIMATION =====
+// ===== CRICKET-STYLE DECELERATION COUNTER =====
 function animCount(el, target, suffix) {
-    let v = 0;
-    const step = target / 60;
-    const t = setInterval(() => {
-        v += step;
-        if (v >= target) {
-            v = target;
-            clearInterval(t);
+    const totalDuration = 2000; // total animation time in ms
+    const startTime = performance.now();
+
+    function easeOutQuart(t) {
+        // Fast at start, dramatically slow at end
+        return 1 - Math.pow(1 - t, 4);
+    }
+
+    function tick(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / totalDuration, 1);
+        const easedProgress = easeOutQuart(progress);
+        const currentValue = Math.round(easedProgress * target);
+
+        el.textContent = currentValue + (suffix || '');
+
+        if (progress < 1) {
+            requestAnimationFrame(tick);
+        } else {
+            el.textContent = target + (suffix || '');
         }
-        el.textContent = Math.floor(v) + (suffix || '');
-    }, 16);
+    }
+
+    requestAnimationFrame(tick);
 }
 
 const obs = new IntersectionObserver(entries => {
