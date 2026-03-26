@@ -495,11 +495,13 @@ header {
 .tick-inner {
    display: inline-block;
    white-space: nowrap;
-   animation: scroll 35s linear infinite;
-   /* Slightly faster */
+   animation: scroll 40s linear infinite;
+   /* Slightly slower for clarity */
    font-size: 13px;
    color: var(--navy);
    font-weight: 500;
+   will-change: transform;
+   backface-visibility: hidden;
 }
 
 .tick-inner:hover {
@@ -519,11 +521,11 @@ header {
 
 @keyframes scroll {
    from {
-      transform: translateX(100vw)
+      transform: translate3d(0, 0, 0);
    }
 
    to {
-      transform: translateX(-100%)
+      transform: translate3d(-100%, 0, 0);
    }
 }
 
