@@ -1,5 +1,3 @@
-console.log('HSGA Script Loaded v1.1');
-
 // ===== HERO CAROUSEL =====
 let currentHeroSlide = 0;
 function setHeroSlide(idx) {
@@ -21,9 +19,6 @@ function nextHeroSlide() {
     let next = (currentHeroSlide + 1) % slides.length;
     setHeroSlide(next);
 }
-
-// carousel cycle disabled for patriotic animation
-// setInterval(nextHeroSlide, 5000);
 
 // ===== PAGE ROUTING =====
 function showPage(id, navEl) {
@@ -151,30 +146,25 @@ const API_BASE_URL = '/api'; // Change to your actual backend URL
 const MockAPI = {
     // Authentication
     async login(credentials) {
-        console.log('Mock API: Login attempt', credentials);
         return { success: true, token: 'mock-jwt-token', user: { name: 'Admin', role: 'state_secretary' } };
     },
 
     // School Management
     async registerSchool(formData) {
-        console.log('Mock API: Registering school', formData);
         return { success: true, application_id: 'HSGA-2026-' + Math.floor(Math.random() * 10000) };
     },
 
     async getSchoolStatus(id) {
-        console.log('Mock API: Fetching status for', id);
         return { success: true, status: 'In Review', last_updated: new Date().toISOString() };
     },
 
     // Member Management
     async enrollMember(memberData) {
-        console.log('Mock API: Enrolling member', memberData);
         return { success: true, member_id: 'MEM-' + Date.now() };
     },
 
     // Content & Resources
     async getLatestNotifications() {
-        console.log('Mock API: Fetching notifications');
         return [
             { id: 1, title: 'Annual State Jamboree 2026', date: '2026-04-15' },
             { id: 2, title: 'President Award Nominations', date: '2026-03-31' }
@@ -182,7 +172,6 @@ const MockAPI = {
     },
 
     async submitContactForm(data) {
-        console.log('Mock API: Contact form submission', data);
         return { success: true, message: 'Your enquiry has been received.' };
     }
 };
@@ -230,9 +219,106 @@ document.addEventListener('click', (e) => {
     ripple.style.top = y + 'px';
 
     btn.appendChild(ripple);
-    console.log('Ripple attached to:', btn.textContent.trim());
 
     ripple.addEventListener('animationend', () => {
         ripple.remove();
     });
+});
+
+// ===== GALLERY FILTER =====
+function filterGallery(cat, btn) {
+    // Update filter button states
+    document.querySelectorAll('.gal-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Filter gallery items
+    const items = document.querySelectorAll('#galleryGrid .gal-item');
+    items.forEach(item => {
+        if (cat === 'all' || item.dataset.cat === cat) {
+            item.style.display = '';
+            item.style.animation = 'fadeInUp 0.4s ease forwards';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// ===== LIGHTBOX =====
+const lightboxImages = [
+    { src: 'assets/gallery_training_camp.png', caption: 'State Training Camp 2025 — Scouts in formation, Hyderabad State Grounds' },
+    { src: 'assets/gallery_social_service.png', caption: 'Haritha Haram Drive — 25,000 saplings planted in a single day across Telangana' },
+    { src: 'assets/gallery_award_ceremony.png', caption: 'Rajya Puraskar Ceremony — State Award Presentation, Hyderabad' },
+    { src: 'assets/gallery_camping.png', caption: 'Adventure Camp — Scouts setting up camp at Nallamala Hills Basecamp' },
+    { src: 'assets/gallery_jamboree.png', caption: 'Annual State Jamboree 2025 — 5,000+ Scouts & Guides from all 33 Districts' },
+    { src: 'assets/gallery_first_aid.png', caption: 'First Aid Training Camp — District Camp, Karimnagar' }
+];
+let currentLightboxIdx = 0;
+
+function openLightbox(idx) {
+    currentLightboxIdx = idx;
+    const overlay = document.getElementById('lightboxOverlay');
+    const img = document.getElementById('lightboxImg');
+    const caption = document.getElementById('lightboxCaption');
+    if (!overlay || idx >= lightboxImages.length) return;
+
+    img.src = lightboxImages[idx].src;
+    caption.textContent = lightboxImages[idx].caption;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const overlay = document.getElementById('lightboxOverlay');
+    if (overlay) overlay.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function lightboxNav(dir) {
+    let next = currentLightboxIdx + dir;
+    if (next < 0) next = lightboxImages.length - 1;
+    if (next >= lightboxImages.length) next = 0;
+    openLightbox(next);
+}
+
+// Close lightbox on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+});
+
+// ===== SCROLL REVEAL ANIMATION =====
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.5s ease forwards';
+            entry.target.style.opacity = '1';
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+// Apply reveal to key elements when pages become active
+function initRevealAnimations() {
+    const revealEls = document.querySelectorAll(
+        '.st-card, .st-card-sm, .py-phase-card, .py-stage, .gal-item, .blog-card, .job-card, .gs-card, .py-spec-card'
+    );
+    revealEls.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.animationDelay = (i * 0.04) + 's';
+        revealObserver.observe(el);
+    });
+}
+
+// Re-init animations when pages change
+const originalShowPage = window.showPage;
+window.showPage = function(id, navEl) {
+    const result = originalShowPage ? originalShowPage(id, navEl) : null;
+    setTimeout(initRevealAnimations, 100);
+    return result;
+};
+
+// Init on load
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initRevealAnimations, 300);
 });
