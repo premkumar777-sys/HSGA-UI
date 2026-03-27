@@ -320,5 +320,17 @@ window.showPage = function(id, navEl) {
 
 // Init on load
 document.addEventListener('DOMContentLoaded', () => {
+    const splash = document.getElementById('splashScreen');
+    if (splash) {
+        // Dismiss splash after 2.2s (animation duration + small buffer)
+        setTimeout(() => {
+            splash.classList.add('splash-hide');
+            // Remove from DOM after fade transition (0.6s)
+            setTimeout(() => {
+                splash.remove();
+            }, 600);
+        }, 2200);
+    }
+    
     setTimeout(initRevealAnimations, 300);
 });
