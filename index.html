@@ -153,125 +153,227 @@
       <span class="hero-dot" onclick="setHeroSlide(1)"></span>
     </div>
 
-    <!-- PROGRAMS OVERVIEW -->
-    <div class="progs-strip">
+    <!-- PROGRAMS OVERVIEW — REDESIGNED -->
+    <div class="sections-showcase">
       <div class="container">
-        <div class="tag">Our Sections</div>
-        <h2 class="sec-title">Six Sections. <span>One Extraordinary Movement.</span></h2>
-        <div class="rule"></div>
-        <p class="lead">Structured scouting for every age — from curious six-year-olds to young adult leaders. Each
-          section builds on the last, creating a lifelong journey of growth.</p>
-        <div class="prog-mini-grid">
-          <div class="prog-mini">
-            <div class="prog-mini-head ph1">
-              <div class="ico">🐯</div>
-              <h4>Cub Scouts</h4>
-              <div class="age">Boys · Ages 6–10</div>
-            </div>
-            <div class="prog-mini-body">Play-based learning, civic values, nature awareness, and team games. The
-              foundation of every great Scout.</div>
+        <div class="ss-header">
+          <div>
+            <div class="tag">Our Sections</div>
+            <h2 class="sec-title">Six Sections. <span>One Extraordinary Movement.</span></h2>
+            <div class="rule"></div>
+            <p class="lead" style="max-width:540px;">Structured scouting for every age — from curious six-year-olds to young adult leaders. Each section builds on the last, creating a lifelong journey of growth.</p>
           </div>
-          <div class="prog-mini">
-            <div class="prog-mini-head ph2">
-              <div class="ico">⚜️</div>
-              <h4>Scouts</h4>
-              <div class="age">Boys · Ages 10–17</div>
+          <div class="ss-age-bar">
+            <div class="ss-age-label">Age Journey</div>
+            <div class="ss-timeline">
+              <div class="ss-tl-seg ss-boys">
+                <div class="ss-tl-label">Boys</div>
+                <div class="ss-tl-track">
+                  <div class="ss-tl-block" style="width:33.3%">6–10</div>
+                  <div class="ss-tl-block ss-tl-mid" style="width:46.6%">10–17</div>
+                  <div class="ss-tl-block ss-tl-dark" style="width:20%">17–25</div>
+                </div>
+              </div>
+              <div class="ss-tl-seg ss-girls">
+                <div class="ss-tl-label">Girls</div>
+                <div class="ss-tl-track">
+                  <div class="ss-tl-block" style="width:33.3%">6–10</div>
+                  <div class="ss-tl-block ss-tl-mid" style="width:46.6%">10–17</div>
+                  <div class="ss-tl-block ss-tl-dark" style="width:20%">17–25</div>
+                </div>
+              </div>
             </div>
-            <div class="prog-mini-body">Camping, first aid, leadership, community service, and the prestigious President
-              Award pathway.</div>
-          </div>
-          <div class="prog-mini">
-            <div class="prog-mini-head ph3">
-              <div class="ico">🦅</div>
-              <h4>Rover Scouts</h4>
-              <div class="age">Young Men · Ages 17–25</div>
-            </div>
-            <div class="prog-mini-body">Service, social responsibility, disaster relief, and mentoring — the senior arm
-              of the Scout movement.</div>
-          </div>
-          <div class="prog-mini">
-            <div class="prog-mini-head ph4">
-              <div class="ico">🌸</div>
-              <h4>Bulbuls</h4>
-              <div class="age">Girls · Ages 6–10</div>
-            </div>
-            <div class="prog-mini-body">Creativity, kindness, cultural activities, and developing the courage to spread
-              joy everywhere they go.</div>
-          </div>
-          <div class="prog-mini">
-            <div class="prog-mini-head ph5">
-              <div class="ico">🌺</div>
-              <h4>Guides</h4>
-              <div class="age">Girls · Ages 10–17</div>
-            </div>
-            <div class="prog-mini-body">Life skills, leadership, community service, and the full progressive badge
-              system including President Award.</div>
-          </div>
-          <div class="prog-mini">
-            <div class="prog-mini-head ph6">
-              <div class="ico">🌊</div>
-              <h4>Ranger Guides</h4>
-              <div class="age">Young Women · Ages 17–25</div>
-            </div>
-            <div class="prog-mini-body">Empowerment, entrepreneurship, environmental leadership, and shaping the women
-              leaders of tomorrow.</div>
           </div>
         </div>
-        <div style="text-align:center;margin-top:28px;"><a href="#" onclick="showPage('programs')"
-            class="btn btn-navy">Explore All Programs →</a></div>
+
+        <!-- SECTION CARDS GRID -->
+        <div class="ss-grid">
+          <!-- BOYS LANE -->
+          <div class="ss-lane-label ss-lane-boys">⚡ Boy Scouts</div>
+          <div class="ss-card ss-card-boys1">
+            <div class="ss-card-num">01</div>
+            <div class="ss-card-emoji">🐯</div>
+            <div class="ss-card-content">
+              <h3>Cub Scouts</h3>
+              <div class="ss-card-age">Boys · Ages 6 – 10</div>
+              <p>Play-based learning, civic values, nature awareness, and team games. The foundation of every great Scout.</p>
+              <div class="ss-card-badges">
+                <span>Pack System</span><span>Akela-Led</span><span>Silver Arrow</span>
+              </div>
+            </div>
+            <div class="ss-card-glow ss-glow-orange"></div>
+          </div>
+          <div class="ss-card ss-card-boys2">
+            <div class="ss-card-num">02</div>
+            <div class="ss-card-emoji">⚜️</div>
+            <div class="ss-card-content">
+              <h3>Scouts</h3>
+              <div class="ss-card-age">Boys · Ages 10 – 17</div>
+              <p>Camping, first aid, leadership, community service, and the prestigious President Award pathway.</p>
+              <div class="ss-card-badges">
+                <span>Troop System</span><span>Rajya Puraskar</span><span>President Award</span>
+              </div>
+            </div>
+            <div class="ss-card-glow ss-glow-navy"></div>
+          </div>
+          <div class="ss-card ss-card-boys3">
+            <div class="ss-card-num">03</div>
+            <div class="ss-card-emoji">🦅</div>
+            <div class="ss-card-content">
+              <h3>Rover Scouts</h3>
+              <div class="ss-card-age">Young Men · Ages 17 – 25</div>
+              <p>Service, social responsibility, disaster relief, and mentoring — the senior arm of the Scout movement.</p>
+              <div class="ss-card-badges">
+                <span>Crew System</span><span>Wood Badge</span><span>Service Lead</span>
+              </div>
+            </div>
+            <div class="ss-card-glow ss-glow-dark"></div>
+          </div>
+
+          <!-- GIRLS LANE -->
+          <div class="ss-lane-label ss-lane-girls">🌸 Girl Guides</div>
+          <div class="ss-card ss-card-girls1">
+            <div class="ss-card-num">04</div>
+            <div class="ss-card-emoji">🌸</div>
+            <div class="ss-card-content">
+              <h3>Bulbuls</h3>
+              <div class="ss-card-age">Girls · Ages 6 – 10</div>
+              <p>Creativity, kindness, cultural activities, and developing the courage to spread joy everywhere they go.</p>
+              <div class="ss-card-badges">
+                <span>Flock System</span><span>Owl-Led</span><span>Silver Fish</span>
+              </div>
+            </div>
+            <div class="ss-card-glow ss-glow-pink"></div>
+          </div>
+          <div class="ss-card ss-card-girls2">
+            <div class="ss-card-num">05</div>
+            <div class="ss-card-emoji">🌺</div>
+            <div class="ss-card-content">
+              <h3>Guides</h3>
+              <div class="ss-card-age">Girls · Ages 10 – 17</div>
+              <p>Life skills, leadership, community service, and the full progressive badge system including President Award.</p>
+              <div class="ss-card-badges">
+                <span>Company System</span><span>Rajya Puraskar</span><span>President Award</span>
+              </div>
+            </div>
+            <div class="ss-card-glow ss-glow-rose"></div>
+          </div>
+          <div class="ss-card ss-card-girls3">
+            <div class="ss-card-num">06</div>
+            <div class="ss-card-emoji">🌊</div>
+            <div class="ss-card-content">
+              <h3>Ranger Guides</h3>
+              <div class="ss-card-age">Young Women · Ages 17 – 25</div>
+              <p>Empowerment, entrepreneurship, environmental leadership, and shaping the women leaders of tomorrow.</p>
+              <div class="ss-card-badges">
+                <span>Unit System</span><span>WAGGS</span><span>Empowerment</span>
+              </div>
+            </div>
+            <div class="ss-card-glow ss-glow-teal"></div>
+          </div>
+        </div>
+
+        <div class="ss-footer">
+          <a href="#" onclick="showPage('programs')" class="btn btn-navy">Explore All Programs →</a>
+          <a href="#" onclick="showPage('prashiksham')" class="btn btn-outline">View Training Framework →</a>
+        </div>
       </div>
     </div>
 
-    <!-- WHY HSGA -->
-    <div class="why-sec">
+    <!-- WHY HSGA — REDESIGNED -->
+    <div class="why-redesign">
       <div class="container">
-        <div class="tag" style="color:var(--saff2)">Why HSGA</div>
-        <h2 class="sec-title white">Eight Reasons Schools <span>Choose Us — and Stay.</span></h2>
-        <div class="rule"></div>
-        <div class="why-grid">
-          <div class="why-box">
-            <div class="ico">🎓</div>
-            <h5>NEP 2020 Credits</h5>
-            <p>Scouting qualifies as co-curricular credits under NEP 2020 — directly improving student academic
-              profiles.</p>
+        <div class="why-r-header">
+          <div class="tag why-tag">Why HSGA</div>
+          <h2 class="sec-title">Eight Reasons Schools <span>Choose Us — and Stay.</span></h2>
+          <div class="rule"></div>
+        </div>
+
+        <div class="why-r-grid">
+          <div class="why-r-card" data-num="01">
+            <div class="why-r-icon-wrap wri-1">🎓</div>
+            <div class="why-r-body">
+              <div class="why-r-num">01</div>
+              <h4>NEP 2020 Credits</h4>
+              <p>Scouting qualifies as co-curricular credits under NEP 2020 — directly improving student academic profiles and school report quality.</p>
+              <div class="why-r-tag">Ministry of Education</div>
+            </div>
           </div>
-          <div class="why-box">
-            <div class="ico">🏅</div>
-            <h5>President Award Path</h5>
-            <p>India's highest scouting honour. HSGA Telangana guides students all the way to the Presidential podium.
-            </p>
+
+          <div class="why-r-card" data-num="02">
+            <div class="why-r-icon-wrap wri-2">🏅</div>
+            <div class="why-r-body">
+              <div class="why-r-num">02</div>
+              <h4>President Award Path</h4>
+              <p>India's highest scouting honour — directly from the President of India. HSGA Telangana guides every eligible student all the way to the Presidential podium.</p>
+              <div class="why-r-tag">India's Top Youth Honour</div>
+            </div>
           </div>
-          <div class="why-box">
-            <div class="ico">🌍</div>
-            <h5>Global Recognition</h5>
-            <p>Membership in WOSM and WAGGS opens doors to international jamborees and global fellowships.</p>
+
+          <div class="why-r-card" data-num="03">
+            <div class="why-r-icon-wrap wri-3">🌍</div>
+            <div class="why-r-body">
+              <div class="why-r-num">03</div>
+              <h4>Global Recognition</h4>
+              <p>Membership in WOSM (172 countries) and WAGGS opens doors to international jamborees, global fellowships, and worldwide Scout identity.</p>
+              <div class="why-r-tag">172 Countries · WOSM · WAGGS</div>
+            </div>
           </div>
-          <div class="why-box">
-            <div class="ico">📜</div>
-            <h5>Govt. Certification</h5>
-            <p>Certificates carry weight in Telangana government scholarship and higher education applications.</p>
+
+          <div class="why-r-card" data-num="04">
+            <div class="why-r-icon-wrap wri-4">📜</div>
+            <div class="why-r-body">
+              <div class="why-r-num">04</div>
+              <h4>Govt. Certification</h4>
+              <p>Certificates carry direct weight in Telangana government scholarships, college admissions, and higher education applications — a real-world advantage.</p>
+              <div class="why-r-tag">Govt. of Telangana Recognised</div>
+            </div>
           </div>
-          <div class="why-box">
-            <div class="ico">🌱</div>
-            <h5>Environmental Citizen</h5>
-            <p>Haritha Haram, Swachh Bharat, and UN SDG activities make students genuine eco-leaders.</p>
+
+          <div class="why-r-card" data-num="05">
+            <div class="why-r-icon-wrap wri-5">🌱</div>
+            <div class="why-r-body">
+              <div class="why-r-num">05</div>
+              <h4>Environmental Citizen</h4>
+              <p>Haritha Haram, Swachh Bharat, and UN SDG activities make students genuine eco-leaders — not just learners, but active environmental change-makers.</p>
+              <div class="why-r-tag">UN SDGs · Haritha Haram</div>
+            </div>
           </div>
-          <div class="why-box">
-            <div class="ico">🛡️</div>
-            <h5>Character First</h5>
-            <p>Scouts and Guides consistently demonstrate higher discipline, empathy, and civic responsibility.</p>
+
+          <div class="why-r-card" data-num="06">
+            <div class="why-r-icon-wrap wri-6">🛡️</div>
+            <div class="why-r-body">
+              <div class="why-r-num">06</div>
+              <h4>Character First</h4>
+              <p>Scouts and Guides consistently demonstrate higher discipline, empathy, and civic responsibility — measurably better outcomes in school culture and behaviour.</p>
+              <div class="why-r-tag">Scout Law · 12 Core Values</div>
+            </div>
           </div>
-          <div class="why-box">
-            <div class="ico">🏕️</div>
-            <h5>Camps & Adventure</h5>
-            <p>District, state, and national camps that build resilience and leadership beyond classroom walls.</p>
+
+          <div class="why-r-card" data-num="07">
+            <div class="why-r-icon-wrap wri-7">🏕️</div>
+            <div class="why-r-body">
+              <div class="why-r-num">07</div>
+              <h4>Camps & Adventure</h4>
+              <p>District, state, and national camps build resilience, teamwork, and leadership skills that no classroom can replicate — real experiences that shape real leaders.</p>
+              <div class="why-r-tag">District · State · National Camps</div>
+            </div>
           </div>
-          <div class="why-box">
-            <div class="ico">👨‍🏫</div>
-            <h5>Teacher Support</h5>
-            <p>Certified Scout Masters and Guide Captains receive structured training and ongoing professional
-              development.</p>
+
+          <div class="why-r-card" data-num="08">
+            <div class="why-r-icon-wrap wri-8">👨‍🏫</div>
+            <div class="why-r-body">
+              <div class="why-r-num">08</div>
+              <h4>Teacher Support</h4>
+              <p>Certified Scout Masters and Guide Captains receive structured Wood Badge training and ongoing professional development — a valued credential for your teaching staff.</p>
+              <div class="why-r-tag">Wood Badge Certified</div>
+            </div>
           </div>
+        </div>
+
+        <div class="why-r-cta">
+          <a href="#" onclick="showPage('onboarding')" class="btn btn-orange">Affiliate Your School →</a>
+          <a href="#" onclick="showPage('about')" class="btn btn-outline-light">Learn More About HSGA →</a>
         </div>
       </div>
     </div>
